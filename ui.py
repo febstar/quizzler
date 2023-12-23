@@ -48,8 +48,7 @@ class QuizInterface:
 
     def right(self):
         user_answer = "True"
-        is_right = self.quiz.check_answer(user_answer)
-        if is_right:
+        if is_right := self.quiz.check_answer(user_answer):
             self.score += 1
             self.label1.config(text=f"Score: {self.score}")
             self.good()
@@ -59,8 +58,7 @@ class QuizInterface:
 
     def left(self):
         user_answer = "False"
-        is_right = self.quiz.check_answer(user_answer)
-        if is_right:
+        if is_right := self.quiz.check_answer(user_answer):
             self.score +=1
             self.label1.config(text=f"Score: {self.score}")
             self.good()
